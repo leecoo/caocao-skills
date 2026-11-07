@@ -155,7 +155,8 @@ description: |
    ```bash
    python <skill目录>/scripts/md_to_pdf.py 报告.md 报告.pdf --title "报告标题"
    ```
-   依赖缺失时先尝试安装：`pip install weasyprint markdown`；
+   依赖缺失时先尝试安装：`pip install weasyprint markdown`。**安装最多尝试 1 次，失败即走回退，不要反复尝试。**
+   **Windows 特别提示**：WeasyPrint 依赖 GTK 运行时（gobject/pango/cairo DLL）。若本机无 GTK3-Runtime，即使 pip 装上 weasyprint 导入也会失败——探测到缺 GTK 时直接回退 Markdown，不要折腾安装（GTK 属系统级安装，超出常规权限）。
 3. **回退规则**——出现以下任一情况，改为交付 Markdown 文件并在结尾说明原因，Markdown 稿的七章结构必须完整：
    - weasyprint / markdown 依赖无法安装（无网络、无权限）；
    - 转换报错且一次修正尝试后仍失败；

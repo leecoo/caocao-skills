@@ -2,5 +2,6 @@ __pycache__/
 *.pyc
 *.pdf
 *.html
+.pip_tmp/
 .DS_Store
 Thumbs.db
