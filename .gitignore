@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pdf
+*.html
+.DS_Store
+Thumbs.db
